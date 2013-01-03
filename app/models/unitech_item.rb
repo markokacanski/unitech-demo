@@ -24,6 +24,7 @@ class UnitechItem < ActiveRecord::Base
     end
   end
 
+
   def self.get_subcategories(category = nil)
     if category
       rows = where("cat1 = '#{category}'").uniq.pluck(:cat2)
@@ -60,4 +61,5 @@ class UnitechItem < ActiveRecord::Base
 
     return rows
   end
+
 end
