@@ -1,0 +1,14 @@
+<h1>unitech items index</h1>
+
+<% if !@items.blank? %>
+  <% for item in @items %>
+    <p><em><%= item.name %></em> in category 
+    <em><%= item.cat1 %>→</em>
+    <em><%= item.cat2 %>→</em>
+    <em><%= item.cat3 %>→</em>
+    <em><%= item.cat4 %></em></p>
+    <br>
+  <% end %>
+<% else %>
+  <p>No items found in db</p>
+<% end %>
