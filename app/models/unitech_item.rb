@@ -23,4 +23,41 @@ class UnitechItem < ActiveRecord::Base
       find(:all)
     end
   end
+
+  def self.get_subcategories(category = nil)
+    if category
+      rows = where("cat1 = '#{category}'").uniq.pluck(:cat2)
+      
+      if rows.empty?
+        rows = where("cat2 = '#{category}'").uniq.pluck(:cat3)       
+      end
+
+      if rows.empty?
+        rows = where("cat3 = '#{category}'").uniq.pluck(:cat4)
+      end
+
+      if rows.empty?
+        rows = where("cat4 = '#{category}'").uniq.pluck(:cat4)
+      end
+    else
+      rows = uniq.pluck(:cat1)
+    end
+
+    return rows
+  end
+
+  def self.get_manufacturers
+    rows = uniq.pluck(:manufacturer)
+    return rows
+  end
+
+  def self.get_podbrends(manufacturer = nil)
+    if manufacturer
+      rows = where("manufacturer = '#{manufacturer}'").uniq.pluck(:manufacturer_pb);
+    else
+      rows = uniq.pluck(:manufacturer_pb);
+    end
+
+    return rows
+  end
 end
