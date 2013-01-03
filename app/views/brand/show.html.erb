@@ -1,2 +1,50 @@
-<h1>Brand#show</h1>
-<p>Find me in app/views/brand/show.html.erb</p>
+
+<div class="row">
+  
+  <div class="span3">
+    <!-- ODABIR BRENDA I PODBRENDA -->
+
+    <div class="accordion" id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            Brend1
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <a href="#"> Podbrend </a>
+          </div>
+          <div class="accordion-inner">
+            <a href="#"> Podbrend </a>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+            Brend2
+          </a>
+        </div>
+        <div id="collapseTwo" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <a href="#"> Podbrend </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ISPIS TEKSTA -->
+
+  <div class="span9 vertical-margin">
+    <% if !@items.blank? %>
+      <% for item in @items %>
+        <p><em><%= item.name %></em> proizvođač: <%= item.manufacturer %> podbrend <%= item.manufacturer_pb %></p>
+      <% end %>
+    <% else %>
+      <p>No items found in db</p>
+    <% end %>
+  </div>
+</div>
