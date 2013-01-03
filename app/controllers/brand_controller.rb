@@ -16,6 +16,9 @@ class BrandController < ApplicationController
         @items = UnitechItem.all
       end
 
+    else
+      @items = UnitechItem.all
     end
+
   end
 end
