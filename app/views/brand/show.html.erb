@@ -58,9 +58,14 @@
 
   <div class="span9 vertical-margin">
     <% if !@items.blank? %>
-      <% for item in @items %>
-        <p><em><%= item.name %></em> proizvođač: <%= item.manufacturer %> podbrend <%= item.manufacturer_pb %></p>
-      <% end %>
+      <div class="row">
+        <% for item in @items %>
+          <div class="span3 product">
+            <img src="http://placehold.it/220x150">
+            <p><em><%= item.name %></em> </br>proizvođač: <%= item.manufacturer %></br> podbrend <%= item.manufacturer_pb %></p>
+          </div>
+        <% end %>
+      </div>
     <% else %>
       <p>No items found in db</p>
     <% end %>
