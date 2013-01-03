@@ -1,4 +1,6 @@
 UnitechDemo::Application.routes.draw do
+  get "search/index"
+
   get "brand/show"
 
   resources :unitech_items
