@@ -7,44 +7,61 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
-		<div class="navbar">
-		  <div class="navbar-inner">
-		    <a class="brand" href="#">Unitech d.o.o</a>
-				
-				<ul class="nav">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Unitech d.o.o</a>
+        
+        <ul class="nav">
           <li><a href="/brand">Po brendovima</a></li>
           <li class="dropdown">
-          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Po kategorijama <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Po kategorijama <b class="caret"></b></a>
             
             <ul class="dropdown-menu">
+               <li class="dropdown-submenu">
+                  <a href="#">Prvi</a>
+                  <ul class="dropdown-menu">
+                   <li class="dropdown-submenu">
+                      <a href="#">Drugi</a>
+                      <ul class="dropdown-menu">
+                         <li class="dropdown-submenu">
+                            <a href="#">Cetvrti</a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Second level link</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
               <li><a href="/category">Sve za frizerske salone</a></li>
               <li><a href="/category">Sve za beauty salone</a></li>
               <li><a href="/category">Rezervni delovi</a></li>
+              
             </ul>
           </li>
         </ul>
 
-		    <!-- <form class="navbar-search pull-left">
-  				<input type="text" class="search-query" placeholder="Search">
-				</form> -->
+        <!-- <form class="navbar-search pull-left">
+          <input type="text" class="search-query" placeholder="Search">
+        </form> -->
 
 
 
         <%= form_tag search_index_path, :class =>'navbar-search pull-left', :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search], :class=>"search-query" %>
-            <%= submit_tag "Search", :name => nil %>
+            <%= submit_tag "Search", :name => nil, :class=>"btn" %>
           </p>
         <% end %>
 
 
-		  </div>
+      </div>
 
 
-		</div>
-		<%= yield %>
-	</div>
+    </div>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
