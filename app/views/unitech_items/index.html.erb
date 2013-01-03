@@ -1,37 +1,38 @@
 
 <div class="row">
 	
-	<!-- 	ODABIR KATEGORIJA -->	
-	
 	<div class="span3">
+		<!-- ODABIR BRENDA I PODBRENDA -->
 
-			<!-- DRUGA KATEGORIJA -->
-
-		<div class="cat2 row vertical-margin">
-			<div class="span3">
-			  <input type="checkbox" value="#"><p>Tu kod2</p></input>
-			</div>
+		<div class="accordion" id="accordion2">
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+		        Brend1
+		      </a>
+		    </div>
+		    <div id="collapseOne" class="accordion-body collapse">
+		      <div class="accordion-inner">
+		        <a href="#"> Podbrend </a>
+		      </div>
+		      <div class="accordion-inner">
+		        <a href="#"> Podbrend </a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+		        Brend2
+		      </a>
+		    </div>
+		    <div id="collapseTwo" class="accordion-body collapse">
+		      <div class="accordion-inner">
+		        <a href="#"> Podbrend </a>
+		      </div>
+		    </div>
+		  </div>
 		</div>
-
-			<!-- 	TRECA kategorija -->	
-
-		<div class="cat3 row vertical-margin">
-			<div class="span3">
-			  <input type="checkbox" value="#"><p>Tu kod3</p></input>
-			</div>
-		</div>
-
-			<!-- CETVRTA KATEGORIJA -->
-
-		<div class="cat4 row vertical-margin">
-			<div class="span3">
-			  <input type="checkbox" value="#"><p>Tu kod4</p></input>
-			</div>
-		</div>
-
-
-
-<!-- 		za dodavanje nove kategorije potrebno je dodati cat# u css zavisno da li je parni ili neparni odgovarajucu liniju. kategorije su grupisane u CSSu -->
 
 	</div>
 
@@ -52,7 +53,3 @@
 		<% end %>
 	</div>
 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> pretraga proizvoda po nazivu, kategoriji ili proizvođaču/podbrendu
