@@ -1,3 +1,39 @@
 // Place all the styles related to the unitech_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+.vertical-margin{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.cat1, .cat3, .main-brand {
+	padding-top:5px;
+	padding-bottom: 5px;
+	margin-left:0px;
+	background-color: #EBEBEB;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.cat2, .cat4, .sub-brand {
+	padding-top:5px;
+	padding-bottom: 5px;
+	margin-left:0px;
+	background-color: #f6f6f6;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.span3 input {
+	float: left;
+	margin-right:5px;
+}
+
+.span3 p{
+	margin:0 0 0 5px;
+
+}
