@@ -1,5 +1,10 @@
 UnitechDemo::Application.routes.draw do
+  get "brand/show"
+
   resources :unitech_items
+
+  match "/brand" =>"brand#show"
+  match "/brand/*brands" => "brand#show"
 
   match "/category" =>"category#show"
   match "/category/*categories" => "category#show"
