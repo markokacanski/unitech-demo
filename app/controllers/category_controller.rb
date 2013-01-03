@@ -1,7 +1,34 @@
 class CategoryController < ApplicationController
   def show
     if params[:categories]
-      @cat = params[:categories].split("/")
+      category = params[:categories].split("/")
+
+      if category[3]
+        @items = UnitechItem.where("
+          cat1 = '#{category[0]}'
+          AND cat2 = '#{category[1]}'
+          AND cat3 = '#{category[2]}'
+          AND cat4 = '#{category[3]}'
+        ")
+      elsif category[2]
+        @items = UnitechItem.where("
+          cat1 = '#{category[0]}'
+          AND cat2 = '#{category[1]}'
+          AND cat3 = '#{category[2]}'
+        ")
+      elsif category[1]
+        @items = UnitechItem.where("
+          cat1 = '#{category[0]}'
+          AND cat2 = '#{category[1]}'
+        ")
+      elsif category[0]
+        @items = UnitechItem.where("
+          cat1 = '#{category[0]}'
+        ")
+      else
+        @items = UnitechItem.all
+      end
+        
     end
   end
 end
