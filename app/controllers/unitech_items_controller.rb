@@ -1,5 +1,5 @@
 class UnitechItemsController < ApplicationController
   def index
-    @items = UnitechItem.all
+    @items = UnitechItem.search(params[:search])
   end
 end
