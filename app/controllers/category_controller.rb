@@ -3,6 +3,10 @@ class CategoryController < ApplicationController
     if params[:categories]
       category = params[:categories].split("/")
 
+      category.each_index do |i|
+        category[i] = category[i].tr("_", " ")
+      end
+
       if category[3]
         @items = UnitechItem.where("
           cat1 = '#{category[0]}'
@@ -28,7 +32,9 @@ class CategoryController < ApplicationController
       else
         @items = UnitechItem.all
       end
-        
+    else
+      @items = UnitechItem.all
     end
+      
   end
 end
