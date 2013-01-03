@@ -1,5 +1,8 @@
 UnitechDemo::Application.routes.draw do
   resources :unitech_items
+
+  match "/category" =>"category#show"
+  match "/category/*categories" => "category#show"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
