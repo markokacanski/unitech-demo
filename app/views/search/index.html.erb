@@ -1,3 +1,41 @@
+<div class="row">
+  <div class="span3">
+    <!-- ODABIR BRENDA I PODBRENDA -->
+
+    <div class="accordion" id="accordion2">
+
+      <% @brands.each do |key,value| %>
+        <% 
+          safe_key = key.tr(" ", "_") 
+
+        %>
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#<%= safe_key %>">
+              <%= key %>
+            </a>
+          </div>
+          <div id="<%= safe_key %>" class="accordion-body collapse">
+            <% value.each do |podbrend| %>
+              <% 
+                if podbrend.nil?
+                  naziv_podbrenda = key
+                else
+                  naziv_podbrenda = podbrend
+                end
+               %>
+              <div class="accordion-inner">
+                <a href="/brand/<%=safe_key%>/<%= podbrend.to_s.tr(" ", "_") %>"> <%= naziv_podbrenda %> </a>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+
 <div class="span9 vertical-margin">
     <% if !@items.blank? %>
       <div class="row">
@@ -12,3 +50,4 @@
       <p>No items found in db</p>
     <% end %>
   </div>
+</div>
