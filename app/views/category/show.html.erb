@@ -1,1 +1,56 @@
 <%= @cat.to_s %>
+
+
+<div class="row">
+	
+	<!-- 	ODABIR KATEGORIJA -->	
+	
+	<div class="span3">
+
+			<!-- DRUGA KATEGORIJA -->
+
+		<div class="cat2 row vertical-margin">
+			<div class="span3">
+			  <input type="checkbox" value="#"><p>Tu kod2</p></input>
+			</div>
+		</div>
+
+			<!-- 	TRECA kategorija -->	
+
+		<div class="cat3 row vertical-margin">
+			<div class="span3">
+			  <input type="checkbox" value="#"><p>Tu kod3</p></input>
+			</div>
+		</div>
+
+			<!-- CETVRTA KATEGORIJA -->
+
+		<div class="cat4 row vertical-margin">
+			<div class="span3">
+			  <input type="checkbox" value="#"><p>Tu kod4</p></input>
+			</div>
+		</div>
+
+
+
+<!-- 		za dodavanje nove kategorije potrebno je dodati cat# u css zavisno da li je parni ili neparni odgovarajucu liniju. kategorije su grupisane u CSSu -->
+
+	</div>
+
+	<!-- ISPIS TEKSTA -->
+
+	<div class="span9 vertical-margin">
+		<% if !@items.blank? %>
+		  <% for item in @items %>
+		    <p><em><%= item.name %></em> in category 
+		    <em><%= item.cat1 %>→</em>
+		    <em><%= item.cat2 %>→</em>
+		    <em><%= item.cat3 %>→</em>
+		    <em><%= item.cat4 %></em></p>
+		    <br>
+		  <% end %>
+		<% else %>
+		  <p>No items found in db</p>
+		<% end %>
+	</div>
+</div>
