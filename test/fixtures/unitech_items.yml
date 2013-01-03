@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  model: 1
+  name: MyString
+  desc: MyText
+  cat1: MyString
+  cat2: MyString
+  cat3: MyString
+  cat4: MyString
+  quantity: 1
+  price: 1.5
+  manufacturer: MyString
+  manufacturer_pb: MyString
+  weight: 1.5
+  unit: MyString
+
+two:
+  model: 1
+  name: MyString
+  desc: MyText
+  cat1: MyString
+  cat2: MyString
+  cat3: MyString
+  cat4: MyString
+  quantity: 1
+  price: 1.5
+  manufacturer: MyString
+  manufacturer_pb: MyString
+  weight: 1.5
+  unit: MyString
